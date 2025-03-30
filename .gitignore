@@ -1,0 +1,3 @@
+bin/
+genmake-go
+*.bak
