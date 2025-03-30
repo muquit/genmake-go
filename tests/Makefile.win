@@ -1,0 +1,38 @@
+##----------------------------------------------------------------------------
+# Created with genmake-go v1.0.1 on Sun, 30 Mar 2025 18:03:23 EDT
+# genmake-go https://github.com/muquit/genmake-go
+# License is MIT
+##----------------------------------------------------------------------------
+
+CC= cl
+#DEFS=  -nologo -DSTRICT -G3 -Ow -W3 -Zp -Tp
+DEFS=  -nologo -G3
+PROGNAME= hello.exe
+LINKER=link -nologo
+
+INCLUDES=  -I. 
+
+# don't define -DSYS_WIN32.. win2k complains
+DEFINES= $(INCLUDES) $(DEFS) -DWINNT=1 
+
+CFLAGS= $(DEFINES)
+GUIFLAGS=user32.lib gdi32.lib winmm.lib comdlg32.lib comctl32.lib
+WINSOCK_LIB=wsock32.lib
+LIBS=$(WINSOCK_LIB) $(GUIFLAGS)
+RC=rc
+RCVARS=-r -DWIN32
+
+SRCS = main.c
+
+OBJS = main.obj
+
+.c.obj:
+	$(CC) $(CFLAGS) -c $< -Fo$@
+
+all: $(PROGNAME)
+
+$(PROGNAME) : $(OBJS)
+	$(LINKER) $(OBJS) /OUT:$(PROGNAME) $(LIBS)
+
+clean:
+	del $(OBJS) $(PROGNAME) core

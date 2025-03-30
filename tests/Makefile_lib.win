@@ -1,0 +1,31 @@
+##----------------------------------------------------------------------------
+# Created with genmake-go v1.0.1 on Sun, 30 Mar 2025 18:04:03 EDT
+# genmake-go https://github.com/muquit/genmake-go
+# License is MIT
+##----------------------------------------------------------------------------
+
+CC= cl
+DEFS=  -DWINNT=1
+
+INCLUDES=  -I. -I..
+LIBRARY= hello.lib
+
+# replace -O with -g in order to debug
+
+DEFINES= $(INCLUDES) $(DEFS) 
+#CFLAGS=  $(cvars) $(cdebug) -nologo -G4 $(DEFINES)
+
+
+SRCS = main.c
+OBJS = main.obj
+
+.c.obj:
+	$(CC) $(CFLAGS) $(DEFS) -c $< -Fo$@
+
+all: $(LIBRARY)
+
+$(LIBRARY): $(OBJS)
+	link /lib /OUT:$(LIBRARY) $(OBJS) 
+
+clean:
+	del $(OBJS) $(LIBRARY) *.bak

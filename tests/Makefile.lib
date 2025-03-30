@@ -1,0 +1,35 @@
+##----------------------------------------------------------------------------
+# Created with genmake-go v1.0.1 on Sun, 30 Mar 2025 18:02:35 EDT
+# genmake-go https://github.com/muquit/genmake-go
+# License is MIT
+##----------------------------------------------------------------------------
+rm=/bin/rm -f
+CC= cc
+LINK= -=LINK=-
+DEFS=  
+AR= ar cq
+RANLIB= /usr/bin/ranlib
+LIBNAME= hello.lib
+
+INCLUDES=  -I. -I..
+
+DEFINES= $(INCLUDES) $(DEFS) -DSYS_UNIX=1
+CFLAGS= -g $(DEFINES)
+
+SRCS = main.c
+
+OBJS = main.o
+
+.c.o:
+	$(rm) -f $@
+	$(CC) $(CFLAGS) -c $*.c
+
+all: $(LIBNAME)
+
+$(LIBNAME) : $(OBJS)
+	$(rm) $@
+	$(AR) $@ $(OBJS)
+	$(RANLIB) $@
+
+clean:
+	$(rm) $(OBJS) $(LIBNAME) core *~
