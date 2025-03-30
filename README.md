@@ -88,7 +88,7 @@ cd genmake-go
 go build .
 ```
 
-Look at Makefile for more info
+Look at Makefile for more info. Look at `./tests` directory for generated example Makefiles.
 
 # License
 
@@ -100,4 +100,4 @@ Developed with Claude AI 3.7 Sonnet, working under my guidance and instructions 
 the perl script [genmake](https://muquit.com/muquit/software/genmake/genmake.html) to go
 
 ---
-<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Mar-29-2025</sub>
+<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Mar-30-2025</sub>

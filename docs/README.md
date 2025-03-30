@@ -78,7 +78,7 @@ cd genmake-go
 go build .
 ```
 
-Look at Makefile for more info
+Look at Makefile for more info. Look at `./tests` directory for generated example Makefiles.
 
 # License
 
