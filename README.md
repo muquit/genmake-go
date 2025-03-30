@@ -10,8 +10,8 @@
 
 ## Introduction
 
-genmake-go is a cross platform tool to generate _simple_ Makefiles for C programs. It is a golang port of my
-perl script [genmake](https://muquit.com/muquit/software/genmake/genmake.html)
+`genmake-go` is a simple cross platform tool to generate _simple_ Makefiles for C programs. It is a golang port of my
+perl script [genmake](https://muquit.com/muquit/software/genmake/genmake.html).
 
 # Synopsis
 
@@ -66,7 +66,7 @@ Please look at [ChangeLog](ChangeLog.md) for what has changed in the current ver
 
 # Quick Start
 
-Install [Go](https://go.dev/) first
+Install [go](https://go.dev/) first
 
 ```bash
 go install github.com/muquit/genmake-go@latest
@@ -87,6 +87,8 @@ git clone https://github.com/muquit/genmake-go
 cd genmake-go
 go build .
 ```
+
+Look at Makefile for more info
 
 # License
 
