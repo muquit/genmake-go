@@ -80,7 +80,7 @@ Download pre-compiled binaries from
 
 # Building from source
 
-Install [Go](https://go.dev/) first
+Install [go](https://go.dev/) first
 
 ```bash
 git clone https://github.com/muquit/genmake-go
